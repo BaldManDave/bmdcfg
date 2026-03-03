@@ -133,4 +133,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-screenfetch
+which -s screenfetch && screenfetch
