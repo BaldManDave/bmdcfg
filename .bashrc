@@ -133,4 +133,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# If running in WSL, set ssh alias to Windows ssh.exe
+# This allows for the BitWarden ssh-agent to operate in WSL
+if [ $(echo $WSL_DISTRO_NAME) ]; then
+  alias ssh="ssh.exe"
+fi
+
 which -s screenfetch && screenfetch
