@@ -149,4 +149,4 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-which -s screenfetch && screenfetch
+which -s fastfetch && fastfetch
