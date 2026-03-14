@@ -138,6 +138,11 @@ if [ $(echo $WSL_DISTRO_NAME) ]; then
   alias scp='scp.exe'
   alias sftp='sftp.exe'
 fi
+
+# If the bitwarden socket exists, use bitwarden for SSH keys
+if [ -f "~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock" ]; then
+  export SSH_AUTH_SOCK=~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+fi
 # ========
 
 # Alias definitions.
