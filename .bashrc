@@ -146,7 +146,9 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+   . ~/.bash_aliases
 fi
 
-which -s fastfetch && fastfetch
+if [ -f /usr/bin/fastfetch ]; then
+   fastfetch
+fi
