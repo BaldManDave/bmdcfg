@@ -138,6 +138,11 @@ if [ $(echo $WSL_DISTRO_NAME) ]; then
   alias scp='scp.exe'
   alias sftp='sftp.exe'
 fi
+
+# If the bitwarden socket exists, use bitwarden for SSH keys
+if [ -f "~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock" ]; then
+  export SSH_AUTH_SOCK=~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+fi
 # ========
 
 # Alias definitions.
@@ -146,7 +151,9 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+   . ~/.bash_aliases
 fi
 
-which -s screenfetch && screenfetch
+if [ -f /usr/bin/fastfetch ]; then
+   fastfetch
+fi
