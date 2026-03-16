@@ -140,7 +140,7 @@ if [ $(echo $WSL_DISTRO_NAME) ]; then
 fi
 
 # If the bitwarden socket exists, use bitwarden for SSH keys
-if [ -f "~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock" ]; then
+if [ -e ~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock ]; then
   export SSH_AUTH_SOCK=~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
 fi
 # ========
